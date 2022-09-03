@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/algonacci/task-manager/issues"
   },
-  "homepage": "https://github.com/algonacci/task-manager#readme"
+  "homepage": "https://github.com/algonacci/task-manager#readme",
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "mongoose": "^6.5.4"
+  }
 }
