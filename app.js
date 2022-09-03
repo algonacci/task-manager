@@ -1,11 +1,13 @@
 const express = require("express");
 const connectDB = require("./db/connect");
 const tasks = require("./routes/tasks");
+const notFound = require("./middleware/not-found");
+const errorHandler = require("./middleware/error-handler");
 require("dotenv").config();
 
 const app = express();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const start = async () => {
   try {
@@ -18,12 +20,12 @@ const start = async () => {
   }
 };
 
+app.use(express.static("./public"));
 app.use(express.json());
 
 app.use("/api/v1/tasks", tasks);
 
-app.get("/hello", (req, res) => {
-  res.send("Task Manager!");
-});
+app.use(notFound);
+app.use(errorHandler);
 
 start();

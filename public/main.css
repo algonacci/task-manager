@@ -433,6 +433,7 @@ form > :last-child {
   margin: 0 auto;
   text-align: center;
   margin-top: 6rem;
+  margin-bottom: 6rem;
   background: var(--black);
 }
 .back-link:hover {
